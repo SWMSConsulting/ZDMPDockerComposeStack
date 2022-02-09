@@ -29,9 +29,30 @@ services:
       ME_CONFIG_MONGODB_URL: mongodb://root:rootpassword@mongodb:27017/
     networks:
       - "zdmpuda"
+      
+  sqldata:
+    container_name: sqldata
+    hostname: sqldata
+    restart: always
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    volumes:
+      - mssql_data:/var/opt/mssql/data
+      - mssql_log:/var/opt/mssql/log
+      - mssql_secrets:/var/opt/mssql/secrets
+    environment:
+      - MSSQL_PID=Express
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    networks:
+      - "zdmpuda"
 
 volumes:
   mongodb_data_container:
+  mssql_data:
+  mssql_log:
+  mssql_secrets:
   
 networks:
   zdmpuda:
