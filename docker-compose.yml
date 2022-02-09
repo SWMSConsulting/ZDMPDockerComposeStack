@@ -36,7 +36,7 @@ services:
     hostname: xafserver
     restart: always
     ports:
-      - 4000:4000
+      - 4000:80
     networks:
       - "zdmpuda"
       
