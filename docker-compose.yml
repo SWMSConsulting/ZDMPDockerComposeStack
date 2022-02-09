@@ -30,6 +30,16 @@ services:
     networks:
       - "zdmpuda"
       
+  xafserver:
+    image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
+    container_name: xafserver
+    hostname: xafserver
+    restart: always
+    ports:
+      - 4000:4000
+    networks:
+      - "zdmpuda"
+      
   sqldata:
     container_name: sqldata
     hostname: sqldata
