@@ -37,6 +37,12 @@ services:
     restart: always
     ports:
       - 4000:80
+    environment:
+      SQL_PROVIDER: sqldata
+      SQL_SERVER: rootpassword
+      SQL_USER: sa
+      SQL_PASSWORD: yourStrongPassword#123
+      SQL_CATALOG: zdmpUDAtest
     networks:
       - "zdmpuda"
       
