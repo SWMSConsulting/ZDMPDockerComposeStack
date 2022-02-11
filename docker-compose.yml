@@ -38,7 +38,7 @@ services:
     ports:
       - 4000:80
     environment:
-      SQL_PROVIDER: sqldata
+      SQL_PROVIDER: 157.90.171.58
       SQL_SERVER: rootpassword
       SQL_USER: sa
       SQL_PASSWORD: yourStrongPassword#123
