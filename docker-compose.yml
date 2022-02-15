@@ -44,7 +44,7 @@ services:
 #       SQL_PASSWORD: yourStrongPassword#123
 #       SQL_CATALOG: zdmpUDAtest
       SQL_PROVIDER: 65.108.81.72
-      SQL_SERVER: rootpassword
+      SQL_SERVER: MSSqlServer
       SQL_USER: sa
       SQL_PASSWORD: Pass@word
       SQL_CATALOG: zdmpUDAtest
