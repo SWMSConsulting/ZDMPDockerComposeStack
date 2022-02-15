@@ -38,10 +38,15 @@ services:
     ports:
       - 4000:80
     environment:
-      SQL_PROVIDER: 157.90.171.58
+#       SQL_PROVIDER: 157.90.171.58
+#       SQL_SERVER: rootpassword
+#       SQL_USER: sa
+#       SQL_PASSWORD: yourStrongPassword#123
+#       SQL_CATALOG: zdmpUDAtest
+      SQL_PROVIDER: 65.108.81.72
       SQL_SERVER: rootpassword
       SQL_USER: sa
-      SQL_PASSWORD: yourStrongPassword#123
+      SQL_PASSWORD: Pass@word
       SQL_CATALOG: zdmpUDAtest
     networks:
       - "zdmpuda"
