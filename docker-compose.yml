@@ -52,6 +52,22 @@ services:
     networks:
       - "zdmpuda"
       
+  zdmpudabackend:
+    image: swmscon.azurecr.io/zdmpudabackend:latest
+    container_name: zdmpudabackend
+    hostname: zdmpudabackend
+    restart: always
+    ports:
+      - 5000:81
+    environment:
+      SQL_PROVIDER: MSSqlServer
+      SQL_SERVER: sqldata
+      SQL_USER: sa
+      SQL_PASSWORD: Pass@word
+      SQL_CATALOG: zdmpUDAtest
+    networks:
+      - "zdmpuda"
+      
   sqldata:
     container_name: sqldata
     hostname: sqldata
