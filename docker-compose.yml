@@ -65,6 +65,7 @@ services:
       SQL_USER: sa
       SQL_PASSWORD: Pass@word
       SQL_CATALOG: zdmpUDAtest
+      ASPNETCORE_URLS: http://+:80
     networks:
       - "zdmpuda"
       
