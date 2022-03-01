@@ -59,14 +59,12 @@ services:
     restart: always
     ports:
       - 5000:80
-      - 5001:443
-    environment:
-      SQL_PROVIDER: MSSqlServer
-      SQL_SERVER: sqldata
-      SQL_USER: sa
-      SQL_PASSWORD: Pass@word
-      SQL_CATALOG: zdmpUDAtest
-      ASPNETCORE_URLS: http://+:80
+#     environment:
+#       SQL_PROVIDER: MSSqlServer
+#       SQL_SERVER: sqldata
+#       SQL_USER: sa
+#       SQL_PASSWORD: Pass@word
+#       SQL_CATALOG: zdmpUDAtest
     networks:
       - "zdmpuda"
       
