@@ -38,13 +38,7 @@ services:
     ports:
       - 4000:80
     environment:
-#       SQL_PROVIDER: 157.90.171.58
-#       SQL_SERVER: rootpassword
-#       SQL_USER: sa
-#       SQL_PASSWORD: yourStrongPassword#123
-#       SQL_CATALOG: zdmpUDAtest
       SQL_PROVIDER: MSSqlServer
-#     SQL_SERVER: 65.108.81.72
       SQL_SERVER: sqldata
       SQL_USER: sa
       SQL_PASSWORD: Pass@word
@@ -59,12 +53,13 @@ services:
     restart: always
     ports:
       - 5000:80
-#     environment:
-#       SQL_PROVIDER: MSSqlServer
-#       SQL_SERVER: sqldata
-#       SQL_USER: sa
-#       SQL_PASSWORD: Pass@word
-#       SQL_CATALOG: zdmpUDAtest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+#       - ASPNETCORE_Kestrel__Certificates__Default__Password=password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    volumes:
+      - ~/.aspnet/https:/https:ro
     networks:
       - "zdmpuda"
       
