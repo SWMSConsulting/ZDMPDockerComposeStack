@@ -56,6 +56,16 @@ services:
     networks:
       - "zdmpuda"
       
+  zdmpudacomponentbackendwebapi:
+    image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
+    container_name: zdmpudacomponentbackendwebapi
+    hostname: zdmpudacomponentbackendwebapi
+    restart: always
+    ports:
+      - 6000:80
+    networks:
+      - "zdmpuda"
+      
   sqldata:
     container_name: sqldata
     hostname: sqldata
