@@ -42,7 +42,8 @@ services:
       SQL_SERVER: sqldata
       SQL_USER: sa
       SQL_PASSWORD: Pass@word
-      SQL_CATALOG: zdmpUDAtest
+#       SQL_CATALOG: zdmpUDAtest
+      SQL_CATALOG: zdmpUDAdemonstration
     networks:
       - "zdmpuda"
       
