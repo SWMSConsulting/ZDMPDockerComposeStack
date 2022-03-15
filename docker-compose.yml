@@ -71,8 +71,9 @@ services:
       SQL_PASSWORD: Pass@word
       SQL_CATALOG: zdmpUDAdemonstration
       MONGO_CONNECTION: mongodb://root:rootpassword@65.108.81.72:27017/zdmpUDAdemonstration/?authSource=admin
-      MONGO_DATABASE: zdmpUDAdemonstration
-      
+#       MONGO_DATABASE: zdmpUDAdemonstration
+      MONGO_DATABASE: zdmpuda1
+
     networks:
       - "zdmpuda"
       
