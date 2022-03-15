@@ -42,8 +42,8 @@ services:
       SQL_SERVER: sqldata
       SQL_USER: sa
       SQL_PASSWORD: Pass@word
-#       SQL_CATALOG: zdmpUDAdemonstration
-      SQL_CATALOG: zdmpUDAtest
+      SQL_CATALOG: zdmpUDAdemonstration
+#       SQL_CATALOG: zdmpUDAtest
     networks:
       - "zdmpuda"
       
@@ -64,6 +64,15 @@ services:
     restart: always
     ports:
       - 6000:80
+    environment:
+      SQL_PROVIDER: MSSqlServer
+      SQL_SERVER: sqldata
+      SQL_USER: sa
+      SQL_PASSWORD: Pass@word
+      SQL_CATALOG: zdmpUDAdemonstration
+      MONGO_CONNECTION: mongodb://root:rootpassword@65.108.81.72:27017/zdmpUDAdemonstration/?authSource=admin
+      MONGO_DATABASE: zdmpUDAdemonstration
+      
     networks:
       - "zdmpuda"
       
