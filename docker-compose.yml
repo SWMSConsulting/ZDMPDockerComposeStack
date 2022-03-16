@@ -42,20 +42,20 @@ services:
       SQL_SERVER: sqldata
       SQL_USER: sa
       SQL_PASSWORD: Pass@word
-      SQL_CATALOG: zdmpUDAdemonstration
+      SQL_CATALOG: zdmpUDA1
 #       SQL_CATALOG: zdmpUDAtest
     networks:
       - "zdmpuda"
       
-  zdmpudabackend:
-    image: swmscon.azurecr.io/zdmpudabackend:latest
-    container_name: zdmpudabackend
-    hostname: zdmpudabackend
-    restart: always
-    ports:
-      - 5000:80
-    networks:
-      - "zdmpuda"
+#   zdmpudabackend:
+#     image: swmscon.azurecr.io/zdmpudabackend:latest
+#     container_name: zdmpudabackend
+#     hostname: zdmpudabackend
+#     restart: always
+#     ports:
+#       - 5000:80
+#     networks:
+#       - "zdmpuda"
       
   zdmpudacomponentbackendwebapi:
     image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
@@ -69,7 +69,7 @@ services:
       SQL_SERVER: sqldata
       SQL_USER: sa
       SQL_PASSWORD: Pass@word
-      SQL_CATALOG: zdmpUDAdemonstration
+      SQL_CATALOG: zdmpUDA1
       MONGO_CONNECTION: mongodb://root:rootpassword@65.108.81.72:27017/?authSource=admin
       MONGO_DATABASE: default
 
