@@ -42,20 +42,20 @@ services:
       SQL_SERVER: sqldata
       SQL_USER: sa
       SQL_PASSWORD: Pass@word
-#       SQL_CATALOG: zdmpUDAdemonstration
-      SQL_CATALOG: zdmpUDAtest
+      SQL_CATALOG: zdmpUDAdemonstration
+#       SQL_CATALOG: zdmpUDAtest
     networks:
       - "zdmpuda"
       
-#   zdmpudabackend:
-#     image: swmscon.azurecr.io/zdmpudabackend:latest
-#     container_name: zdmpudabackend
-#     hostname: zdmpudabackend
-#     restart: always
-#     ports:
-#       - 5000:80
-#     networks:
-#       - "zdmpuda"
+  zdmpudabackend:
+    image: swmscon.azurecr.io/zdmpudabackend:latest
+    container_name: zdmpudabackend
+    hostname: zdmpudabackend
+    restart: always
+    ports:
+      - 5000:80
+    networks:
+      - "zdmpuda"
       
   zdmpudacomponentbackendwebapi:
     image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
