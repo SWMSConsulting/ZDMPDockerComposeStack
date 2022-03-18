@@ -69,7 +69,7 @@ services:
       SQL_SERVER: sqldata
       SQL_USER: sa
       SQL_PASSWORD: Pass@word
-      SQL_CATALOG: zdmpUDAtest
+      SQL_CATALOG: zdmpUDAdemonstration
       MONGO_CONNECTION: mongodb://root:rootpassword@65.108.81.72:27017/?authSource=admin
       MONGO_DATABASE: default
 
