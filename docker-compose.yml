@@ -38,8 +38,8 @@ services:
     ports:
       - 4000:80
     # https://www.portainer.io/blog/using-env-files-in-stacks-with-portainer 
-    env_file:
-      - .env
+    # env_file:
+    #   - .env
     # environment:
 #       SQL_PROVIDER: MSSqlServer
 #       SQL_SERVER: sqldata
@@ -70,8 +70,8 @@ services:
     ports:
       - 6000:80
     # https://www.portainer.io/blog/using-env-files-in-stacks-with-portainer 
-    env_file:
-      - .env
+    # env_file:
+    #   - .env
 #     environment:
 #       SQL_PROVIDER: MSSqlServer
 #       SQL_SERVER: sqldata
