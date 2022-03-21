@@ -39,7 +39,7 @@ services:
       - 4000:80
     # https://www.portainer.io/blog/using-env-files-in-stacks-with-portainer 
     env_file:
-      - stack.env
+      - .env
     # environment:
 #       SQL_PROVIDER: MSSqlServer
 #       SQL_SERVER: sqldata
@@ -71,7 +71,7 @@ services:
       - 6000:80
     # https://www.portainer.io/blog/using-env-files-in-stacks-with-portainer 
     env_file:
-      - stack.env
+      - .env
 #     environment:
 #       SQL_PROVIDER: MSSqlServer
 #       SQL_SERVER: sqldata
