@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "zdmp-uda.fullname" . }}
+  namespace: {{ .Release.Namespace }} 
   labels:
     {{- include "zdmp-uda.labels" . | nindent 4 }}
 spec:

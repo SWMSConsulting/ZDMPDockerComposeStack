@@ -1,0 +1,35 @@
+labels:
+  io.cattle.role: project 
+categories:
+- zdmp
+- uda
+questions:
+# Secrets ----------------------------------------------------
+- variable: privateRegistry.registryUrl
+  label: Private registry URL
+  description: "URL of private registry"
+  group: "Private Registry Settings"
+  type: string
+  default: "zdmp-gitlab.ascora.eu:8443"
+  required: true
+- variable: privateRegistry.registryUser
+  label: Private registry user
+  description: "User used to authenticate to private registry"
+  group: "Private Registry Settings"
+  type: string
+  default: ""
+  required: true
+- variable: privateRegistry.registryPasswd
+  label: Private registry password
+  description: "Password used to authenticate to private registry"
+  group: "Private Registry Settings"
+  type: password
+  default: ""
+  required: true
+- variable: defaultSettings.registrySecret
+  label: Private registry secret
+  description: "The Kubernetes Secret name"
+  group: "Private Registry Settings"
+  type: string
+  default: "zdmp-uda-cred"
+  required: true
