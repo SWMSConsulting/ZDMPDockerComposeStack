@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml -c --replicas=1
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: zdmpudacomponentbackendwebapi
+  name: zdmpudacomponentbackendwebapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: zdmpudacomponentbackendwebapi
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yml -c --replicas=1
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/zdmpuda: "true"
+        io.kompose.service: zdmpudacomponentbackendwebapi
+    spec:
+      containers:
+        - env:
+            - name: DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  key: DATABASE_NAME
+                  name: env
+            - name: MONGO_CONNECTION
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGO_CONNECTION
+                  name: env
+            - name: MONGO_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGO_DATABASE
+                  name: env
+            - name: SQL_CATALOG
+              valueFrom:
+                configMapKeyRef:
+                  key: SQL_CATALOG
+                  name: env
+            - name: SQL_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  key: SQL_PASSWORD
+                  name: env
+            - name: SQL_PROVIDER
+              valueFrom:
+                configMapKeyRef:
+                  key: SQL_PROVIDER
+                  name: env
+            - name: SQL_SERVER
+              valueFrom:
+                configMapKeyRef:
+                  key: SQL_SERVER
+                  name: env
+            - name: SQL_USER
+              valueFrom:
+                configMapKeyRef:
+                  key: SQL_USER
+                  name: env
+          image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
+          name: zdmpudacomponentbackendwebapi
+          ports:
+            - containerPort: 80
+          resources: {}
+      hostname: zdmpudacomponentbackendwebapi
+      restartPolicy: Always
+status: {}

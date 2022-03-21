@@ -1,0 +1,16 @@
+apiVersion: v1
+data:
+  DATABASE_NAME: zdmpUDAdemonstration
+  MONGO_CONNECTION: mongodb://root:rootpassword@mongodb:27017/
+  MONGO_DATABASE: zdmpUDAdemonstration
+  SQL_CATALOG: zdmpUDAdemonstration
+  SQL_PASSWORD: Pass@word
+  SQL_PROVIDER: MSSqlServer
+  SQL_SERVER: sqldata
+  SQL_USER: sa
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: xafserver-env
+  name: env
