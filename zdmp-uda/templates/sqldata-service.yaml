@@ -14,6 +14,8 @@ spec:
     - name: "1433"
       port: 1433
       targetPort: 1433
+      nodePort: 30003
+  type: NodePort
   selector:
     io.kompose.service: sqldata
 status:

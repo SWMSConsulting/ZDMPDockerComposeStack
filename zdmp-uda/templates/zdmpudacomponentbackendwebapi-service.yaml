@@ -14,6 +14,8 @@ spec:
     - name: "6000"
       port: 6000
       targetPort: 80
+      nodePort: 30002
+  type: NodePort
   selector:
     io.kompose.service: zdmpudacomponentbackendwebapi
 status:
