@@ -6,3 +6,33 @@ privateRegistry:
   registryUrl: swmscon.azurecr.io
   registryUser: ""
   registryPasswd: ""
+
+udaPortal:
+  image: 
+    #repository: zdmp-gitlab.ascora.eu:8443
+    imageName: uda-portal
+    tag: latest
+    imagePullPolicy: Always
+  service:
+    name: uda-portal
+    replicas: 1
+  ports:
+    hostPort: "4000"
+    type: ClusterIP
+  restartPolicy: Always
+  nginxcreate: true
+
+udaBackendWebApi:
+  image: 
+    #repository: zdmp-gitlab.ascora.eu:8443
+    imageName: uda-backend
+    tag: latest
+    imagePullPolicy: Always
+  service:
+    name: uda-backend
+    replicas: 1
+  ports:
+    hostPort: "6000"
+    type: ClusterIP
+  restartPolicy: Always
+  nginxcreate: true
