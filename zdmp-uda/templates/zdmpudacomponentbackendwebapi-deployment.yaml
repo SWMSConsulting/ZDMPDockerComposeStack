@@ -74,4 +74,8 @@ spec:
           resources: {}
       hostname: zdmpudacomponentbackendwebapi
       restartPolicy: Always
+      {{- if .Values.defaultSettings.registrySecret }}
+      imagePullSecrets:
+      - name: {{ .Values.defaultSettings.registrySecret }}
+      {{- end }}
 status: {}

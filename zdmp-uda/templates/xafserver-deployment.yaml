@@ -74,4 +74,8 @@ spec:
           resources: {}
       hostname: xafserver
       restartPolicy: Always
+      {{- if .Values.defaultSettings.registrySecret }}
+      imagePullSecrets:
+      - name: {{ .Values.defaultSettings.registrySecret }}
+      {{- end }}
 status: {}
