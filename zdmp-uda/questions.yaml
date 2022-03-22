@@ -10,7 +10,8 @@ questions:
   description: "URL of private registry"
   group: "Private Registry Settings"
   type: string
-  default: "zdmp-gitlab.ascora.eu:8443"
+  # default: "zdmp-gitlab.ascora.eu:8443"
+  default: "swmscon.azurecr.io"
   required: true
 - variable: privateRegistry.registryUser
   label: Private registry user
