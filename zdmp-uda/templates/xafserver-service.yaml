@@ -22,8 +22,8 @@ spec:
   ports:
     - name: "uda-portal"
       port: {{ .Values.udaPortal.ports.hostPort }}
-      targetPort: 80
-      # targetPort: {{ .Values.udaPortal.ports.hostPort }}
+      # targetPort: 80
+      targetPort: {{ .Values.udaPortal.ports.hostPort }}
       # nodePort: {{ .Values.udaPortal.ports.nodePort }}
 status:
   loadBalancer: {}
