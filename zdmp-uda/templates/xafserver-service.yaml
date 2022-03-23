@@ -8,17 +8,17 @@ metadata:
   name: {{ .Values.udaPortal.service.name }}
   namespace: {{ .Release.Namespace }} 
   labels:
-    # io.kompose.service: xafserver
-    app: {{ .Values.global.name }}
-    version: {{ .Values.global.appVersion }}
-    name: {{ .Values.udaPortal.service.name }}
+    io.kompose.service: xafserver
+    # app: {{ .Values.global.name }}
+    # version: {{ .Values.global.appVersion }}
+    # name: {{ .Values.udaPortal.service.name }}
 spec:
   type: {{ .Values.udaPortal.ports.type }}
   selector:
-    # io.kompose.service: xafserver
-    app: {{ .Values.global.name }}
-    version: {{ .Values.global.appVersion }}
-    name: {{ .Values.udaPortal.service.name }}-deployment
+    io.kompose.service: xafserver
+    # app: {{ .Values.global.name }}
+    # version: {{ .Values.global.appVersion }}
+    # name: {{ .Values.udaPortal.service.name }}-deployment
   ports:
     - name: "uda-portal"
       port: {{ .Values.udaPortal.ports.hostPort }}
