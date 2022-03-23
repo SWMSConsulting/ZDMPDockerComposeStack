@@ -10,11 +10,11 @@ privateRegistry:
 udaPortal:
   image: 
     #repository: zdmp-gitlab.ascora.eu:8443
-    imageName: uda-portal
+    imageName: xafserver
     tag: latest
     imagePullPolicy: Always
   service:
-    name: uda-portal
+    name: xafserver
     replicas: 1
   ports:
     hostPort: "4000"
@@ -25,11 +25,11 @@ udaPortal:
 udaBackendWebApi:
   image: 
     #repository: zdmp-gitlab.ascora.eu:8443
-    imageName: uda-backend
+    imageName: zdmpudacomponentbackendwebapi
     tag: latest
     imagePullPolicy: Always
   service:
-    name: uda-backend
+    name: zdmpudacomponentbackendwebapi
     replicas: 1
   ports:
     hostPort: "6000"
