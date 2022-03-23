@@ -8,19 +8,18 @@ metadata:
   #   kompose.version: 1.26.0 (40646f47)
   # creationTimestamp: null
   labels:
-    io.kompose.service: xafserver
-    # app: {{ .Values.global.name }}
-    # version: {{ .Values.global.appVersion }}
-    # name: {{ .Values.udaPortal.service.name }}-deployment
-
+    # io.kompose.service: xafserver
+    app: {{ .Values.global.name }}
+    version: {{ .Values.global.appVersion }}
+    name: {{ .Values.udaPortal.service.name }}-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: xafserver
-      # app: {{ .Values.global.name }}
-      # version: {{ .Values.global.appVersion }}
-      # name: {{ .Values.udaPortal.service.name }}-deployment
+      # io.kompose.service: xafserver
+      app: {{ .Values.global.name }}
+      version: {{ .Values.global.appVersion }}
+      name: {{ .Values.udaPortal.service.name }}-deployment
   # strategy: {}
   template:
     metadata:
@@ -29,11 +28,11 @@ spec:
       #   kompose.version: 1.26.0 (40646f47)
       # creationTimestamp: null
       labels:
-        io.kompose.network/zdmpuda: "true"
-        io.kompose.service: xafserver
-        # app: {{ .Values.global.name }}
-        # version: {{ .Values.global.appVersion }}
-        # name: {{ .Values.udaPortal.service.name }}-deployment
+        # io.kompose.network/zdmpuda: "true"
+        # io.kompose.service: xafserver
+        app: {{ .Values.global.name }}
+        version: {{ .Values.global.appVersion }}
+        name: {{ .Values.udaPortal.service.name }}-deployment
     spec:
       hostname: xafserver
       containers:
