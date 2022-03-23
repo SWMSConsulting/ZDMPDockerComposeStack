@@ -42,7 +42,7 @@ spec:
           imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
           ports:
             - name: uda-portal
-            - containerPort: {{ .Values.udaPortal.ports.hostPort }}
+              containerPort: {{ .Values.udaPortal.ports.hostPort }}
           # name: xafserver
         - env:
             - name: DATABASE_NAME
