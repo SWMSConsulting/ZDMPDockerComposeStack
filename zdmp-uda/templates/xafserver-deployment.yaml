@@ -84,8 +84,7 @@ spec:
           # imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
           ports:
             - containerPort: 80
-              hostport: {{ .Values.udaPortal.ports.hostPort }}
-              # - containerPort: {{ .Values.udaPortal.ports.hostPort }}              
+            # - containerPort: {{ .Values.udaPortal.ports.hostPort }}              
             # - name: uda-portal
           # resources: {}
       restartPolicy: Always
