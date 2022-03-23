@@ -21,7 +21,7 @@ spec:
     name: {{ .Values.udaPortal.service.name }}-deployment
   ports:
     - name: "uda-portal"
-      port: {{ .Values.udaPortal.ports.hostPort }}
+      port: 80
       targetPort: 80
       # targetPort: {{ .Values.udaPortal.ports.hostPort }}
       # nodePort: {{ .Values.udaPortal.ports.nodePort }}
