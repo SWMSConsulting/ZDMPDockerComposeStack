@@ -37,13 +37,6 @@ spec:
     spec:
       hostname: xafserver
       containers:
-          - name: xafserver
-        # - name: {{ .Values.udaPortal.service.name }}-container
-          image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
-          imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
-          ports:
-              - containerPort: {{ .Values.udaPortal.ports.hostPort }}
-            # - name: uda-portal
         - env:
             - name: DATABASE_NAME
               valueFrom:
@@ -85,6 +78,13 @@ spec:
                 configMapKeyRef:
                   key: SQL_USER
                   name: env
+        # - name: {{ .Values.udaPortal.service.name }}-container
+          image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
+          name: xafserver
+          # imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
+          ports:
+              - containerPort: {{ .Values.udaPortal.ports.hostPort }}
+            # - name: uda-portal
           # resources: {}
       restartPolicy: Always
       {{- if .Values.defaultSettings.registrySecret }}
