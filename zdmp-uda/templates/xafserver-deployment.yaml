@@ -38,12 +38,12 @@ spec:
       hostname: xafserver
       containers:
         # - name: {{ .Values.udaPortal.service.name }}-container
+          - name: xafserver
           image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
           imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
           ports:
             - name: uda-portal
               containerPort: {{ .Values.udaPortal.ports.hostPort }}
-          name: xafserver
         - env:
             - name: DATABASE_NAME
               valueFrom:
