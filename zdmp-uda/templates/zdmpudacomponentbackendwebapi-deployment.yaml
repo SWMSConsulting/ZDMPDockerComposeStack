@@ -70,7 +70,7 @@ spec:
           image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
           name: zdmpudacomponentbackendwebapi
           ports:
-            - containerPort: 80
+            - containerPort: 100
           resources: {}
       hostname: zdmpudacomponentbackendwebapi
       restartPolicy: Always

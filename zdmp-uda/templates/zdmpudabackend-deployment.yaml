@@ -29,7 +29,7 @@ spec:
         - image: swmscon.azurecr.io/zdmpudabackend:latest
           name: zdmpudabackend
           ports:
-            - containerPort: 80
+            - containerPort: 90
           resources: {}
       hostname: zdmpudabackend
       restartPolicy: Always

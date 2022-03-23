@@ -13,7 +13,7 @@ spec:
   ports:
     - name: "6000"
       port: 6000
-      targetPort: 80
+      targetPort: 100
       nodePort: 30002
   type: NodePort
   selector:
