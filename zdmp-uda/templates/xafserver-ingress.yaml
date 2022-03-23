@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: {{ .Values.udaPortal.service.name }}.zdmp 
+  - host: {{ .Values.udaPortal.service.name }}.minizdmp.swms-cloud.com  
     http:
       paths:
       - path: /
