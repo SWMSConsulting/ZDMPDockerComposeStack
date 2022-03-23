@@ -14,7 +14,7 @@ spec:
       - path: /
         backend:
           serviceName: {{ .Values.udaPortal.service.name }}
-          servicePort: 80
+          servicePort: 4000
   # tls:
   # - hosts:
   #   - {{ .Values.udaPortal.name }}.zdmp
