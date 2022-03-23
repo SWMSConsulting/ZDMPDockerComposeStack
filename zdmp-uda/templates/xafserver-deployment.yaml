@@ -77,14 +77,14 @@ spec:
                 configMapKeyRef:
                   key: SQL_USER
                   name: env
-        # - name: {{ .Values.udaPortal.service.name }}-container
+          name: {{ .Values.udaPortal.service.name }}-container
           image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
-          name: xafserver
-          # imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
+          imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
+          # name: xafserver
           ports:
-            - containerPort: 80
+            - name: uda-portal
+              containerPort: 80
             # - containerPort: {{ .Values.udaPortal.ports.hostPort }}              
-            # - name: uda-portal
           # resources: {}
       restartPolicy: Always
       {{- if .Values.defaultSettings.registrySecret }}
