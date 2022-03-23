@@ -35,7 +35,7 @@ spec:
         # version: {{ .Values.global.appVersion }}
         # name: {{ .Values.udaPortal.service.name }}-deployment
     spec:
-      # hostname: xafserver
+      hostname: xafserver
       containers:
         - name: {{ .Values.udaPortal.service.name }}-container
           image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
