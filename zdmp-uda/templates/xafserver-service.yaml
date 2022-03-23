@@ -1,22 +1,28 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    kompose.cmd: kompose convert -f docker-compose.yml -c --replicas=1
-    kompose.version: 1.26.0 (40646f47)
-  creationTimestamp: null
-  labels:
-    io.kompose.service: xafserver
-  name: xafserver
+  # annotations:
+  #   kompose.cmd: kompose convert -f docker-compose.yml -c --replicas=1
+  #   kompose.version: 1.26.0 (40646f47)
+  # creationTimestamp: null
+  name: {{ .Values.udaPortal.service.name }}
   namespace: {{ .Release.Namespace }} 
+  labels:
+    # io.kompose.service: xafserver
+    app: {{ .Values.global.name }}
+    version: {{ .Values.global.appVersion }}
+    name: {{ .Values.udaPortal.service.name }}
 spec:
-  ports:
-    - name: "4000"
-      port: 4000
-      targetPort: 80
-      nodePort: 30000
-  type: NodePort
+  type: {{ .Values.udaPortal.ports.type }}
   selector:
-    io.kompose.service: xafserver
+    # io.kompose.service: xafserver
+    app: {{ .Values.global.name }}
+    version: {{ .Values.global.appVersion }}
+    name: {{ .Values.udaPortal.service.name }}-deployment
+  ports:
+    - name: "uda-portal"
+      port: {{ .Values.udaPortal.ports.hostPort }}
+      targetPort: {{ .Values.udaPortal.ports.hostPort }}
+      # nodePort: {{ .Values.udaPortal.ports.nodePort }}
 status:
   loadBalancer: {}

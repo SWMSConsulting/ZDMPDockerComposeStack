@@ -36,3 +36,7 @@ udaBackendWebApi:
     type: ClusterIP
   restartPolicy: Always
   nginxcreate: true
+
+  global:
+    name: uda
+    appVersion: 1.0.0
