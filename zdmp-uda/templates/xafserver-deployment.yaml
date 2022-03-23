@@ -83,7 +83,8 @@ spec:
           name: xafserver
           # imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
           ports:
-              - containerPort: {{ .Values.udaPortal.ports.hostPort }}
+              - containerPort: 80
+              # - containerPort: {{ .Values.udaPortal.ports.hostPort }}              
             # - name: uda-portal
           # resources: {}
       restartPolicy: Always
