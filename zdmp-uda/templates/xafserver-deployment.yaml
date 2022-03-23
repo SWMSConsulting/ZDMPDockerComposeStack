@@ -42,8 +42,8 @@ spec:
           image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
           imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
           ports:
-            - name: uda-portal
-              containerPort: {{ .Values.udaPortal.ports.hostPort }}
+            # - name: uda-portal
+              - containerPort: {{ .Values.udaPortal.ports.hostPort }}
         - env:
             - name: DATABASE_NAME
               valueFrom:
