@@ -1,22 +1,50 @@
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   annotations:
+#     kompose.cmd: kompose convert -f docker-compose.yml -c --replicas=1
+#     kompose.version: 1.26.0 (40646f47)
+#   creationTimestamp: null
+#   labels:
+#     io.kompose.service: sqldata
+#   name: sqldata
+#   namespace: {{ .Release.Namespace }} 
+# spec:
+#   ports:
+#     - name: "1433"
+#       port: 1433
+#       targetPort: 1433
+#   selector:
+#     io.kompose.service: sqldata
+# status:
+#   loadBalancer: {}
+
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    kompose.cmd: kompose convert -f docker-compose.yml -c --replicas=1
-    kompose.version: 1.26.0 (40646f47)
-  creationTimestamp: null
-  labels:
-    io.kompose.service: sqldata
-  name: sqldata
+  # annotations:
+  #   kompose.cmd: kompose convert -f docker-compose.yml -c --replicas=1
+  #   kompose.version: 1.26.0 (40646f47)
+  # creationTimestamp: null
+  name: {{ .Values.sqldata.service.name }}
   namespace: {{ .Release.Namespace }} 
+  labels:
+    # io.kompose.service: xafserver
+    app: {{ .Values.global.name }}
+    version: {{ .Values.global.appVersion }}
+    name: {{ .Values.sqldata.service.name }}
 spec:
+  type: {{ .Values.sqldata.ports.type }}
+  selector:
+    # io.kompose.service: xafserver
+    app: {{ .Values.global.name }}
+    version: {{ .Values.global.appVersion }}
+    name: {{ .Values.sqldata.service.name }}-deployment
   ports:
     - name: "1433"
       port: 1433
       targetPort: 1433
-      nodePort: 30003
-  type: NodePort
-  selector:
-    io.kompose.service: sqldata
+  # selector:
+  #   io.kompose.service: sqldata
 status:
   loadBalancer: {}

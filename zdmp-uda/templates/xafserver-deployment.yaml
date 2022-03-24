@@ -28,7 +28,7 @@ spec:
       #   kompose.version: 1.26.0 (40646f47)
       # creationTimestamp: null
       labels:
-        # io.kompose.network/zdmpuda: "true"
+        io.kompose.network/zdmpuda: "true"
         # io.kompose.service: xafserver
         app: {{ .Values.global.name }}
         version: {{ .Values.global.appVersion }}
@@ -77,10 +77,10 @@ spec:
                 configMapKeyRef:
                   key: SQL_USER
                   name: env
+          # name: xafserver
           name: {{ .Values.udaPortal.service.name }}-container
           image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
           imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
-          # name: xafserver
           ports:
             - name: uda-portal
               containerPort: 80

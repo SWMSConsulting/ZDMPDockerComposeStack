@@ -7,6 +7,21 @@ privateRegistry:
   registryUser: ""
   registryPasswd: ""
 
+sqldata:
+  image: 
+    #repository: zdmp-gitlab.ascora.eu:8443
+    imageName: sqldata
+    tag: latest
+    imagePullPolicy: IfNotPresent
+  service:
+    name: sqldata
+    replicas: 1
+  ports:
+    hostPort: "1443"
+    type: ClusterIP
+  restartPolicy: Always
+  nginxcreate: true
+
 udaPortal:
   image: 
     #repository: zdmp-gitlab.ascora.eu:8443
