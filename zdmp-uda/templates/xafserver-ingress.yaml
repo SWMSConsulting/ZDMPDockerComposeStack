@@ -1,32 +1,10 @@
-# apiVersion: networking.k8s.io/v1beta1
-# kind: Ingress
-# metadata:
-#   name: {{ .Values.udaPortal.service.name }}-ingress
-#   namespace: {{ .Release.Namespace }}
-#   annotations:
-#     # use the shared ingress-nginx
-#     kubernetes.io/ingress.class: "nginx"
-# spec:
-#   rules:
-#   - host: {{ .Values.udaPortal.service.name }}.minizdmp.swms-cloud.com  
-#     http:
-#       paths:
-#       - path: /
-#         backend:
-#           serviceName: {{ .Values.udaPortal.service.name }}
-#           servicePort: 4000
-#   # tls:
-#   # - hosts:
-#   #   - {{ .Values.udaPortal.name }}.zdmp
+# A ingress-controller is needed. For ZDMP use the shared ingress-nginx
 
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ .Values.udaPortal.service.name }}-ingress
   namespace: {{ .Release.Namespace }}
-  # annotations:
-  #   # use the shared ingress-nginx
-  #   kubernetes.io/ingress.class: "nginx"
 spec:
   ingressClassName: nginx
   rules:
