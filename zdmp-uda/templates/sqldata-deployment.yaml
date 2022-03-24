@@ -63,7 +63,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.udaPortal.service.name }}-deployment
+  name: {{ .Values.sqldata.service.name }}-deployment
   namespace: {{ .Release.Namespace }} 
   # annotations:
   #   kompose.cmd: kompose convert -f docker-compose.yml -c --replicas=1
@@ -73,7 +73,7 @@ metadata:
     # io.kompose.service: sqldata
     app: {{ .Values.global.name }}
     version: {{ .Values.global.appVersion }}
-    name: {{ .Values.udaPortal.service.name }}-deployment
+    name: {{ .Values.sqldata.service.name }}-deployment
 spec:
   replicas: 1
   selector:
@@ -81,7 +81,7 @@ spec:
       # io.kompose.service: sqldata
       app: {{ .Values.global.name }}
       version: {{ .Values.global.appVersion }}
-      name: {{ .Values.udaPortal.service.name }}-deployment
+      name: {{ .Values.sqldata.service.name }}-deployment
   strategy:
     type: Recreate
   template:
@@ -95,7 +95,7 @@ spec:
         # io.kompose.service: sqldata
         app: {{ .Values.global.name }}
         version: {{ .Values.global.appVersion }}
-        name: {{ .Values.udaPortal.service.name }}-deployment
+        name: {{ .Values.sqldata.service.name }}-deployment
     spec:
       hostname: sqldata
       containers:
@@ -107,9 +107,9 @@ spec:
             - name: SA_PASSWORD
               value: Pass@word
           # name: sqldata
-          name: {{ .Values.udaPortal.service.name }}-container
+          name: {{ .Values.sqldata.service.name }}-container
           image: mcr.microsoft.com/mssql/server:2017-latest
-          imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
+          imagePullPolicy: {{ .Values.sqldata.image.imagePullPolicy }}
           ports:
             - containerPort: 1433
           resources: {}
