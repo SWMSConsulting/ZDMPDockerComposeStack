@@ -15,6 +15,7 @@ metadata:
 spec:
   type: {{ .Values.udaPortal.ports.type }}
   selector:
+    io.kompose.network/zdmpuda: "true"
     # io.kompose.service: xafserver
     app: {{ .Values.global.name }}
     version: {{ .Values.global.appVersion }}

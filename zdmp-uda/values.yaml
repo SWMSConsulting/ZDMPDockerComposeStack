@@ -17,7 +17,7 @@ sqldata:
     name: sqldata
     replicas: 1
   ports:
-    hostPort: "1443"
+    hostPort: "1433"
     type: ClusterIP
   restartPolicy: Always
   nginxcreate: true
