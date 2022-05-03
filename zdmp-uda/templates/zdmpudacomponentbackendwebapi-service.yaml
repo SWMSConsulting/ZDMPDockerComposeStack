@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  # annotations:
+  #   kompose.cmd: kompose convert -f docker-compose.yml -c --replicas=1
+  #   kompose.version: 1.26.0 (40646f47)
+  # creationTimestamp: null
+  name: {{ .Values.udaBackendWebApi.service.name }}
+  namespace: {{ .Release.Namespace }} 
+  labels:
+    # io.kompose.service: zdmpudacomponentbackendwebapi
+    app: {{ .Values.global.name }}
+    version: {{ .Values.global.appVersion }}
+    name: {{ .Values.udaBackendWebApi.service.name }}
+spec:
+  type: {{ .Values.udaBackendWebApi.ports.type }}
+  selector:
+    # io.kompose.service: zdmpudacomponentbackendwebapi
+    app: {{ .Values.global.name }}
+    version: {{ .Values.global.appVersion }}
+    name: {{ .Values.udaBackendWebApi.service.name }}-deployment
+  ports:
+    - name: "uda-backend"
+      port: 6000
+      targetPort: 80
+status:
+  loadBalancer: {}

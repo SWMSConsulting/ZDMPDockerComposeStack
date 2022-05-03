@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.udaBackendWebApi.service.name }}-deployment
+  namespace: {{ .Release.Namespace }} 
+  # annotations:
+  #   kompose.cmd: kompose convert -f docker-compose.yml -c --replicas=1
+  #   kompose.version: 1.26.0 (40646f47)
+  # creationTimestamp: null
+  labels:
+    # io.kompose.service: zdmpudacomponentbackendwebapi
+    app: {{ .Values.global.name }}
+    version: {{ .Values.global.appVersion }}
+    name: {{ .Values.udaBackendWebApi.service.name }}-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      # io.kompose.service: zdmpudacomponentbackendwebapi
+      app: {{ .Values.global.name }}
+      version: {{ .Values.global.appVersion }}
+      name: {{ .Values.udaBackendWebApi.service.name }}-deployment
+  # strategy: {}
+  template:
+    metadata:
+      # annotations:
+      #   kompose.cmd: kompose convert -f docker-compose.yml -c --replicas=1
+      #   kompose.version: 1.26.0 (40646f47)
+      # creationTimestamp: null
+      labels:
+        # io.kompose.network/zdmpuda: "true"
+        # io.kompose.service: zdmpudacomponentbackendwebapi
+        app: {{ .Values.global.name }}
+        version: {{ .Values.global.appVersion }}
+        name: {{ .Values.udaBackendWebApi.service.name }}-deployment
+    spec:
+      hostname: zdmpudacomponentbackendwebapi
+      containers:
+        - env:
+            - name: DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  key: DATABASE_NAME
+                  name: env
+            - name: MONGO_CONNECTION
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGO_CONNECTION
+                  name: env
+            - name: MONGO_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGO_DATABASE
+                  name: env
+            - name: SQL_CATALOG
+              valueFrom:
+                configMapKeyRef:
+                  key: SQL_CATALOG
+                  name: env
+            - name: SQL_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  key: SQL_PASSWORD
+                  name: env
+            - name: SQL_PROVIDER
+              valueFrom:
+                configMapKeyRef:
+                  key: SQL_PROVIDER
+                  name: env
+            - name: SQL_SERVER
+              valueFrom:
+                configMapKeyRef:
+                  key: SQL_SERVER
+                  name: env
+            - name: SQL_USER
+              valueFrom:
+                configMapKeyRef:
+                  key: SQL_USER
+                  name: env
+          name: {{ .Values.udaBackendWebApi.service.name }}-container
+          image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
+          imagePullPolicy: {{ .Values.udaBackendWebApi.image.imagePullPolicy }}
+          # name: zdmpudacomponentbackendwebapi
+          ports:
+            - name: uda-backend
+            - containerPort: 80
+          resources: {}
+      restartPolicy: Always
+      {{- if .Values.defaultSettings.registrySecret }}
+      imagePullSecrets:
+      - name: {{ .Values.defaultSettings.registrySecret }}
+      {{- end }}
+status: {}
