@@ -83,8 +83,8 @@ spec:
           # name: zdmpudacomponentbackendwebapi
           ports:
             - name: uda-backend
-            - containerPort: 80
-          resources: {}
+              containerPort: 80
+          # resources: {}
       restartPolicy: Always
       {{- if .Values.defaultSettings.registrySecret }}
       imagePullSecrets:
