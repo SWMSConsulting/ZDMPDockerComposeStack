@@ -15,7 +15,7 @@ metadata:
 spec:
   type: {{ .Values.udaPortal.ports.type }}
   selector:
-    io.kompose.service: xafserver
+    # io.kompose.service: xafserver
     app: {{ .Values.global.name }}
     version: {{ .Values.global.appVersion }}
     name: {{ .Values.udaPortal.service.name }}-deployment
