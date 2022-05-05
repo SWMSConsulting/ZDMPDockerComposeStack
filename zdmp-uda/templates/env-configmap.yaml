@@ -7,8 +7,8 @@ data:
   SQL_CATALOG: zdmpUDAdemonstration
   SQL_PASSWORD: Pass@word
   SQL_PROVIDER: MSSqlServer
-  # SQL_SERVER: sqldata
-  SQL_SERVER: 65.108.81.72
+  SQL_SERVER: sqldata
+  # SQL_SERVER: 65.108.81.72
   SQL_USER: sa
 kind: ConfigMap
 metadata:
