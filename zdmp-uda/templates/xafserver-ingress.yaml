@@ -21,4 +21,4 @@ spec:
   tls:
   - hosts:
     - {{ .Values.udaPortal.service.name }}.minizdmp.swms-cloud.com  
-    secretName: {{ .Values.udaPortal.service.name }}-tls
+    # secretName: {{ .Values.udaPortal.service.name }}-tls
