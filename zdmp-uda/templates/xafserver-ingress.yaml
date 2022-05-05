@@ -18,7 +18,7 @@ spec:
             name: {{ .Values.udaPortal.service.name }}
             port:
               number: 4000
-  # tls:
-  # - hosts:
-  #   - {{ .Values.udaPortal.service.name }}.minizdmp.swms-cloud.com  
-  #   secretName: {{ .Values.udaPortal.service.name }}-tls
+  tls:
+  - hosts:
+    - {{ .Values.udaPortal.service.name }}.minizdmp.swms-cloud.com  
+    secretName: {{ .Values.udaPortal.service.name }}-tls
