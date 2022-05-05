@@ -14,7 +14,7 @@ udaPortal:
     tag: latest
     imagePullPolicy: Always
   service:
-    name: xafserver
+    name: udaportal
     replicas: 1
   ports:
     hostPort: "4000"
@@ -29,7 +29,7 @@ udaBackendWebApi:
     tag: latest
     imagePullPolicy: Always
   service:
-    name: zdmpudacomponentbackendwebapi
+    name: udabackend
     replicas: 1
   ports:
     hostPort: "6000"
