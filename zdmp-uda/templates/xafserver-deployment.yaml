@@ -77,6 +77,21 @@ spec:
                 configMapKeyRef:
                   key: SQL_USER
                   name: env
+            - name: ENCODED_REDIRECT_URI
+              valueFrom:
+                configMapKeyRef:
+                  key: ENCODED_REDIRECT_URI
+                  name: env
+            - name: REALM_NAME
+              valueFrom:
+                configMapKeyRef:
+                  key: REALM_NAME
+                  name: env
+            - name: KEYCLOAK_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: KEYCLOAK_URL
+                  name: env
           name: {{ .Values.udaPortal.service.name }}-container
           image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
           imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
