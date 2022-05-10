@@ -7,10 +7,6 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - {{ .Values.udaPortal.service.name }}.minizdmp.swms-cloud.com  
-    # secretName: {{ .Values.udaPortal.service.name }}-tls
   rules:
   - host: {{ .Values.udaPortal.service.name }}.minizdmp.swms-cloud.com  
     http:
@@ -22,3 +18,7 @@ spec:
             name: {{ .Values.udaPortal.service.name }}
             port:
               number: 4000
+  tls:
+  - hosts:
+    - {{ .Values.udaPortal.service.name }}.minizdmp.swms-cloud.com  
+    # secretName: {{ .Values.udaPortal.service.name }}-tls
