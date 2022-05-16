@@ -77,6 +77,21 @@ spec:
                 configMapKeyRef:
                   key: SQL_USER
                   name: env
+            - name: MQTT_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  key: MQTT_USERNAME
+                  name: env
+            - name: MQTT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  key: MQTT_PASSWORD
+                  name: env
+            - name: MQTT_TOPIC
+              valueFrom:
+                configMapKeyRef:
+                  key: MQTT_TOPIC
+                  name: env
           name: {{ .Values.udaBackendWebApi.service.name }}-container
           image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
           imagePullPolicy: {{ .Values.udaBackendWebApi.image.imagePullPolicy }}
