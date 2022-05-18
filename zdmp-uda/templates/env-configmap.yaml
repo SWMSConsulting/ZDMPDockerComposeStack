@@ -10,7 +10,7 @@ data:
   # SQL_SERVER: sqldata
   SQL_SERVER: 65.108.81.72
   SQL_USER: sa
-  ENCODED_REDIRECT_URI: https://udaportal.minizdmp.swms-cloud.com:30443
+  ENCODED_REDIRECT_URI: https://udaportal.minizdmp.swms-cloud.com
   REALM_NAME: swms
   KEYCLOAK_URL: https://keycloak-zdmp.platform.zdmp.eu
   MQTT_USERNAME: swms
