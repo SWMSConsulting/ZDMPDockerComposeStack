@@ -18,7 +18,7 @@ data:
   MQTT_TOPIC: uda_swms
   MQTT_CLIENT: SWMS_UDA_MINIZDMP
   MQTT_HOST: msgbus-zdmp.platform.zdmp.eu
-  MQTT_PORT: 8883
+  MQTT_PORT: "8883"
 kind: ConfigMap
 metadata:
   creationTimestamp: null
