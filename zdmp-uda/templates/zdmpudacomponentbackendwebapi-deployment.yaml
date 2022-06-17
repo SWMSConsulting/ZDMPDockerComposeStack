@@ -92,6 +92,21 @@ spec:
                 configMapKeyRef:
                   key: MQTT_TOPIC
                   name: env
+            - name: MQTT_CLIENT
+              valueFrom:
+                configMapKeyRef:
+                  key: MQTT_CLIENT
+                  name: env
+            - name: MQTT_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: MQTT_HOST
+                  name: env
+            - name: MQTT_PORT
+              valueFrom:
+                configMapKeyRef:
+                  key: MQTT_PORT
+                  name: env
           name: {{ .Values.udaBackendWebApi.service.name }}-container
           image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
           imagePullPolicy: {{ .Values.udaBackendWebApi.image.imagePullPolicy }}
