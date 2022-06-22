@@ -92,6 +92,11 @@ spec:
                 configMapKeyRef:
                   key: KEYCLOAK_URL
                   name: env
+            - name: DASH_BUTTON_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: DASH_BUTTON_URL
+                  name: env
           name: {{ .Values.udaPortal.service.name }}-container
           image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
           imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
