@@ -20,5 +20,5 @@ spec:
               number: 4000
   tls:
   - hosts:
-    - {{ .Values.udaPortal.service.name }}.minizdmp2.swms-cloud.com  
+    - {{ .Values.udaPortal.service.name }}.minizdmp.swms-cloud.com  
     # secretName: {{ .Values.udaPortal.service.name }}-tls

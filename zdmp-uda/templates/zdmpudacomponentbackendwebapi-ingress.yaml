@@ -20,5 +20,5 @@ spec:
               number: 6000
   tls:
   - hosts:
-    - {{ .Values.udaBackendWebApi.service.name }}.minizdmp2.swms-cloud.com  
+    - {{ .Values.udaBackendWebApi.service.name }}.minizdmp.swms-cloud.com  
   #   secretName: {{ .Values.udaBackendWebApi.service.name }}-tls
