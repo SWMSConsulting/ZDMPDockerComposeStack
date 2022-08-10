@@ -11,8 +11,9 @@ data:
   SQL_SERVER: 65.108.81.72
   SQL_USER: sa
   ENCODED_REDIRECT_URI: https://udaportal.minizdmp.swms-cloud.com
-  REALM_NAME: swms
   KEYCLOAK_URL: https://keycloak-zdmp.minizdmp.swms-cloud.com
+  KEYCLOAK_REALM_NAME: swms
+  KEYCLOAK_CLIENT_ID: uda-portal
   DASH_BUTTON_URL: https://portal-api-zdmp.minizdmp.swms-cloud.com
   MQTT_USERNAME: swms
   MQTT_PASSWORD: E+XC:a2VLZQVs?H2hp23

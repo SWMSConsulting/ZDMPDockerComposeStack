@@ -82,15 +82,20 @@ spec:
                 configMapKeyRef:
                   key: ENCODED_REDIRECT_URI
                   name: env
-            - name: REALM_NAME
-              valueFrom:
-                configMapKeyRef:
-                  key: REALM_NAME
-                  name: env
             - name: KEYCLOAK_URL
               valueFrom:
                 configMapKeyRef:
                   key: KEYCLOAK_URL
+                  name: env
+            - name: KEYCLOAK_REALM_NAME
+              valueFrom:
+                configMapKeyRef:
+                  key: KEYCLOAK_REALM_NAME
+                  name: env
+            - name: KEYCLOAK_CLIENT_ID
+              valueFrom:
+                configMapKeyRef:
+                  key: KEYCLOAK_CLIENT_ID
                   name: env
             - name: DASH_BUTTON_URL
               valueFrom:
