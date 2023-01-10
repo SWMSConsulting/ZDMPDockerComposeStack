@@ -11,7 +11,8 @@ questions:
   group: "Private Registry Settings"
   type: string
   # default: "zdmp-gitlab.ascora.eu:8443"
-  default: "swmscon.azurecr.io"
+  # default: "swmscon.azurecr.io"
+  default: "gitlabregistry-zdmp.platform.zdmp.eu/zdmp-catalog/external-zapps/zdmp-uda"
   required: true
 - variable: privateRegistry.registryUser
   label: Private registry user

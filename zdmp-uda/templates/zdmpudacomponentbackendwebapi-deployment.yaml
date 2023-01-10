@@ -108,7 +108,8 @@ spec:
                   key: MQTT_PORT
                   name: env
           name: {{ .Values.udaBackendWebApi.service.name }}-container
-          image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
+          # image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
+          image: gitlabregistry-zdmp.platform.zdmp.eu/zdmp-catalog/external-zapps/zdmp-uda/zdmpudacomponentbackendwebapi:latest
           imagePullPolicy: {{ .Values.udaBackendWebApi.image.imagePullPolicy }}
           # name: zdmpudacomponentbackendwebapi
           ports:

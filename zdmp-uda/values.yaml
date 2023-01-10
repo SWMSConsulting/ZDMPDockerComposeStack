@@ -3,7 +3,8 @@ defaultSettings:
   registrySecret: "zdmp-uda-cred"
 privateRegistry:
   # registryUrl: zdmp-gitlab.ascora.eu:8443
-  registryUrl: swmscon.azurecr.io
+  # registryUrl: swmscon.azurecr.io
+  registryUrl: gitlabregistry-zdmp.platform.zdmp.eu
   registryUser: ""
   registryPasswd: ""
 

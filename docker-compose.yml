@@ -31,7 +31,8 @@ services:
       - "zdmpuda"
       
   xafserver:
-    image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
+    # image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
+    image: gitlabregistry-zdmp.platform.zdmp.eu/zdmp-catalog/external-zapps/zdmp-uda/zdmpudacomponentblazorserver:latest
     container_name: xafserver
     hostname: xafserver
     restart: always
@@ -52,18 +53,19 @@ services:
     networks:
       - "zdmpuda"
       
-  zdmpudabackend:
-    image: swmscon.azurecr.io/zdmpudabackend:latest
-    container_name: zdmpudabackend
-    hostname: zdmpudabackend
-    restart: always
-    ports:
-      - 5000:80
-    networks:
-      - "zdmpuda"
+  # zdmpudabackend:
+  #   image: swmscon.azurecr.io/zdmpudabackend:latest
+  #   container_name: zdmpudabackend
+  #   hostname: zdmpudabackend
+  #   restart: always
+  #   ports:
+  #     - 5000:80
+  #   networks:
+  #     - "zdmpuda"
       
   zdmpudacomponentbackendwebapi:
-    image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
+    # image: swmscon.azurecr.io/zdmpudacomponentbackendwebapi:latest
+    image: gitlabregistry-zdmp.platform.zdmp.eu/zdmp-catalog/external-zapps/zdmp-uda/zdmpudacomponentbackendwebapi:latest
     container_name: zdmpudacomponentbackendwebapi
     hostname: zdmpudacomponentbackendwebapi
     restart: always

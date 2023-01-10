@@ -103,7 +103,8 @@ spec:
                   key: DASH_BUTTON_URL
                   name: env
           name: {{ .Values.udaPortal.service.name }}-container
-          image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
+          # image: swmscon.azurecr.io/zdmpudacomponentblazorserver:latest
+          image: gitlabregistry-zdmp.platform.zdmp.eu/zdmp-catalog/external-zapps/zdmp-uda/zdmpudacomponentblazorserver:latest
           imagePullPolicy: {{ .Values.udaPortal.image.imagePullPolicy }}
           # name: xafserver
           ports:
