@@ -38,6 +38,10 @@ udaBackendWebApi:
   restartPolicy: Always
   nginxcreate: true
 
+ingress:
+  enabled: true
+  domain: platform.zdmp.eu
+
 global:
   name: uda
   appVersion: 1.0.0
