@@ -16,7 +16,7 @@ spec:
       - path: /
         backend:
           serviceName: {{ .Values.udaBackendWebApi.service.name }}
-          servicePort: {{ .Values.udaBackendWebApi.ports.port }}
+          servicePort: {{ .Values.udaBackendWebApi.ports.hostPort }}
   tls:
   - hosts:
     - {{ .Values.udaBackendWebApi.service.name }}-zdmp.{{ .Values.ingress.domain }}
